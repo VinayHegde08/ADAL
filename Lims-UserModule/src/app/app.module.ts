@@ -14,7 +14,7 @@ import {AcknowledgementPage} from '../pages/acknowledgement/acknowledgement';
 import {RecommendationPage} from '../pages/recommendation/recommendation';
 import {WishListPage} from '../pages/wishList/wishList';
 import {FilterPage} from '../pages/filter/filter';
-
+import { Search } from '../providers/search.service';
 
 import { AdminHomeBodyService} from '../providers/admin-home-body.service';
 import { HomeBodyService } from '../providers/home-body.service';
@@ -60,6 +60,6 @@ import { APP_BASE_HREF,HashLocationStrategy,LocationStrategy } from '@angular/co
     LimsAdminComponent
 
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},AdminHomeBodyService,HomeBodyService,Authenticate,AdalService,{provide: APP_BASE_HREF, useValue: '/'}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},AdminHomeBodyService,HomeBodyService,Authenticate,Search,AdalService,{provide: APP_BASE_HREF, useValue: '/'}]
 })
 export class AppModule {}

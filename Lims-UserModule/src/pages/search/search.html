@@ -1,21 +1,13 @@
 <ion-header>
-    <ion-navbar color="primary">
-        <button ion-button menuToggle>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Search</ion-title>
-    </ion-navbar>
-    <!--<ion-toolbar color="secondary">
-        <ion-title>Search</ion-title>
-    </ion-toolbar>-->
-<!--</ion-header>
+    <ion-title>Search</ion-title>
+  </ion-navbar>
 
-
-
-
-<ion-header>-->
   <ion-toolbar color="light">
-   
+
     <ion-segment>
       <ion-segment-button value="Title">
         Title
@@ -31,91 +23,57 @@
     </ion-buttons>-->
   </ion-toolbar>
 </ion-header>
+<ion-content>
 
-
-
-
-
-<ion-content >
-  
-  <ion-row> 
-    <ion-col width-90> 
+  <ion-row>
+    <ion-col width-90>
       <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    </ion-col>
+    <ion-col width-10>
+      <ion-icon class="searchFilter" name="options" (click)=presentPopover($event)></ion-icon>
+    </ion-col>
+  </ion-row>
+  <!--<ion-card class="detailViewPage">
+    <ion-row class="bookDiv">
+      <ion-col width-33>
+        <img class="img-thumbnail bookImg" src="./assets/images/9.png" alt="book Image">
       </ion-col>
-     <ion-col width-10>
-       	<ion-icon class="searchFilter" name="options" (click)=presentPopover($event)></ion-icon>
+      <ion-col width-67 class="rightAlign">
+
+        <span class="bookTitle">Title........</span><br>
+        <span class="bookAuthor">Author.............<br></span>
+
       </ion-col>
     </ion-row>
 
 
 
+  </ion-card>-->
 
 
- <ion-card class="detailViewPage"  >
-	<ion-row class="bookDiv">
-		<ion-col width-33>
-			<img class="img-thumbnail bookImg" src="./assets/images/9.png" alt="book Image">
-		</ion-col>
-		<ion-col width-67 class="rightAlign">
-			<!--<ion-content >-->
-				<span class="bookTitle">Title........</span><br>
-				<span class="bookAuthor">Author.............<br></span>
-				<!--<div class="bookRating">
-                        <span class="glyphicon glyphicon-star" ng-repeat="star in $ctrl.getSize($ctrl.book.avgRating) track by $index"></span>
-                    </div>-->
-				<!--<rating [ngModel]="book.avgRating" readOnly="true" ></rating>-->
-				<!--<span class="bookRenewDetails">Available: <span class="bookRenewTime">{{book.available}}</span></span>-->
-			<!--</ion-content>-->
-		</ion-col>
-	</ion-row>
+  <ion-card class="detailViewPage" *ngFor='let b of book'>
+    <ion-row class="bookDiv">
+      <ion-col width-33>
+        <img class="img-thumbnail bookImg" src="./assets/images/9.png" alt="book Image">
+      </ion-col>
+      <ion-col width-67 class="rightAlign">
 
-	<!--<ion-row>
-		<ion-col>
-			<button ion-button round ion-button color="danger" (click)="requestBook()" [disabled]=isDisabled>Request</button>
-		</ion-col>
+        <span class="bookTitle">{{b.name}}</span><br>
+        <span class="bookAuthor">{{b.mid}}<br></span><br>
+        <span class="bookPublisher">{{b.track}}<br></span>
+
+      </ion-col>
     </ion-row>
-
-  <ion-content class="bookViewDetails detailViewshadowDiv">
-        <ion-row class="bookViewDescription">
-            <span>About the book</span>
-        </ion-row >
-        <span>{{book.description}}</span>
-    </ion-content>-->
-
 </ion-card>
 
 
- <ion-card class="detailViewPage"  >
-	<ion-row class="bookDiv">
-		<ion-col width-33>
-			<img class="img-thumbnail bookImg" src="./assets/images/9.png" alt="book Image">
-		</ion-col>
-		<ion-col width-67 class="rightAlign">
-			<!--<ion-content >-->
-				<span class="bookTitle">Title........</span><br>
-				<span class="bookAuthor">Author.............<br></span>
-				<!--<div class="bookRating">
-                        <span class="glyphicon glyphicon-star" ng-repeat="star in $ctrl.getSize($ctrl.book.avgRating) track by $index"></span>
-                    </div>-->
-				<!--<rating [ngModel]="book.avgRating" readOnly="true" ></rating>-->
-				<!--<span class="bookRenewDetails">Available: <span class="bookRenewTime">{{book.available}}</span></span>-->
-			<!--</ion-content>-->
-		</ion-col>
-	</ion-row>
+  <!--</ion-card>
+  <button (click)="getAllBooks()"> Show Books </button>
+  
+    <ion-card *ngFor='let b of book'>
 
-	<!--<ion-row>
-		<ion-col>
-			<button ion-button round ion-button color="danger" (click)="requestBook()" [disabled]=isDisabled>Request</button>
-		</ion-col>
-    </ion-row>
+      Name : {{b.name }} Author: {{ b.mid }} Publisher: {{b.track }}
 
-  <ion-content class="bookViewDetails detailViewshadowDiv">
-        <ion-row class="bookViewDescription">
-            <span>About the book</span>
-        </ion-row >
-        <span>{{book.description}}</span>
-    </ion-content>-->
-
-</ion-card>
-
-</ion-content>
+    </ion-card>
+>-->
+  </ion-content>

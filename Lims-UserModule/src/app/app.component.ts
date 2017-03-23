@@ -28,7 +28,7 @@ export class MyApp {
   // public authority: string = "https://login.windows.net/common";
   // public redirectUri: string = "http://MyLimsNativeApp";
   // public resourceUri: string = "https://graph.windows.net";
-  // public clientId: string = "99373bce-fb68-4bcd-9adc-a9df099871d1";
+   public clientId: string = "99373bce-fb68-4bcd-9adc-a9df099871d1";
   constructor(platform: Platform, private AdminHomeBodyService: AdminHomeBodyService, public adalService:AdalService,
   private Authentication: Authenticate) {
   this.adalService.init(this.Authentication.adalConfig);

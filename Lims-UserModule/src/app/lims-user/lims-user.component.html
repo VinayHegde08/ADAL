@@ -9,40 +9,44 @@
                  <div class="user-name" style="font-size:2.2rem;margin-top:10px;">
                      Ankita Gupta
                 </div>
-               
+            
+  <!--<ion-item>
+    <ion-avatar item-left>
+      <img src="./assets/images/Profile.png">
+    </ion-avatar>
+    <h2>Prem Das</h2>
+    <p>M1039269</p>
+    <p>Prem.Kumar2@mindtree.com</p>
+  </ion-item>-->
+
        </ion-list-header>
        
        <ion-list>
+           <button menuClose ion-item (click)="openAcknowledgement()"> 
              <ion-row>
-                   <button menuClose ion-item (click)="openAcknowledgement()"> 
                     <ion-col width-10><ion-icon name="ribbon"></ion-icon></ion-col>
-                     <ion-col width-90>Acknowledgement</ion-col>
-                     
-                    </button>
+                     <ion-col width-90>Acknowledgement</ion-col> 
              </ion-row>
-              
+             </button>
+              <button menuClose ion-item (click)="openWishList()">
            <ion-row>    
-               <button menuClose ion-item (click)="openWishList()">
                   <ion-col width-10><ion-icon name="heart-outline"></ion-icon></ion-col>
                   <ion-col width-90> Wish List</ion-col>
-                   
-                </button>
          </ion-row>
+          </button>
+         <button menuClose ion-item (click)="openHelp()"> 
          <ion-row>
-                   <button menuClose ion-item (click)="openHelp()"> 
-                    <ion-col width-20><ion-icon name="information"></ion-icon></ion-col>
-                     <ion-col width-80>&nbsp;&nbsp;Help</ion-col>
-                     
-                    </button>
+                    <ion-col width-10> <ion-icon name="help-circle"></ion-icon></ion-col>
+                     <ion-col width-90>Help</ion-col>
              </ion-row>
-
+                    </button>
+             
+         <button menuClose ion-item (click)="logOut()"> 
            <ion-row>
-               <button menuClose ion-item (click)="doLogout()"> 
                    <ion-col width-10><ion-icon name="log-out"></ion-icon></ion-col>
                    <ion-col width-80>Logout</ion-col>
-                   
-                </button>
-           </ion-row>        
+           </ion-row>
+             </button>        
      </ion-list>
    
     </ion-content>
