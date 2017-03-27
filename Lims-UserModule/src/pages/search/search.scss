@@ -20,4 +20,27 @@
     font-size:2.2em;
     color:#B22222;
     margin-top: 10px;
+} 
+.heart-button button{
+    background-color: white;
+}
+.heart-button .ion-md-heart-outline:before{
+    font-size:2.1em;
+    
+
+}
+.button-clicked [tappable]{
+    background: white;
+}
+.heart-button .ion-md-heart-outline:after{
+    color:#B22222;
+
+
+} 
+.searchResultsTitle {
+    color: #2980b9;
+    font-family: "catamaran";
+    text-align: center;
+    font-size: 18pt;
+    // text-decoration: underline;
 }

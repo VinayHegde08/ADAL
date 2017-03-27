@@ -38,6 +38,7 @@ export class MyApp {
     
   this.adalService.handleWindowCallback();
   this.adalService.getUser();
+  console.log("Token.........",this.adalService.getCachedToken(this.adalService.config.loginResource));
   if(this.adalService.userInfo.isAuthenticated==true)
   {
      this.AdminHomeBodyService.getAdminId(this.adalService.getCachedToken(this.adalService.config.loginResource)).subscribe(response =>

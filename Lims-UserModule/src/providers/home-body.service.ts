@@ -10,6 +10,18 @@ export interface data {
 
 @Injectable()
 
+// export class HomeBodyService {
+//   token;
+//   mid;
+//   name;
+//   email;
+//   constructor(private http: Http, public adalService: AdalService) {
+//     this.token = this.adalService.getCachedToken(this.adalService.config.loginResource);
+//     this.mid = this.adalService.userInfo.userName.substring(0, 8);
+//     this.name = this.adalService.userInfo.profile.name;
+//     this.email = this.adalService.userInfo.profile.unique_name;
+//   }
+// }
 export class HomeBodyService {
   token;
   mid;

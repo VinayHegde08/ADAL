@@ -21,7 +21,7 @@ export class LimsUserComponent {
  @ViewChild(Nav) nav: Nav;
   rootPage: any = TabsPage;
   flag:boolean;
-
+name;
  
   constructor(public platform: Platform,public adalService:AdalService,public navCtrl: NavController, public navParams: NavParams) {
     platform.ready().then(() => {
@@ -29,6 +29,8 @@ export class LimsUserComponent {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
+      this.name = this.adalService.userInfo.profile.name;
+
     });
   }
   openAcknowledgement()
