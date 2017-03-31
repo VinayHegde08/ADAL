@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Detail </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content >
+<ion-card class="detailViewPage"  >
+	<ion-row class="bookDiv">
+		<ion-col width-33>
+			<img class="img-thumbnail bookImg" src="{{book.image}}" alt="book Image">
+		</ion-col>
+		<ion-col width-67 class="rightAlign">
+			<!--<ion-content >-->
+				<span class="bookTitle">{{book.title}}</span><br>
+				<span class="bookAuthor">{{book.authors}}<br></span>
+				<!--<div class="bookRating">
+                        <span class="glyphicon glyphicon-star" ng-repeat="star in $ctrl.getSize($ctrl.book.avgRating) track by $index"></span>
+                    </div>-->
+				<!--<rating [ngModel]="book.avgRating" readOnly="true" ></rating>
+				<span class="bookRenewDetails">Available: <span class="bookRenewTime">{{book.available}}</span></span>-->
+			<!--</ion-content>-->
+		</ion-col>
+	</ion-row>
+
+	<ion-row>
+		<ion-col>
+			<button ion-button round ion-button color="danger" (click)="requestBook()" [disabled]=isDisabled>Request</button>
+		</ion-col>
+	
+    </ion-row>
+
+  <ion-content class="bookViewDetails detailViewshadowDiv">
+        <ion-row class="bookViewDescription">
+            <span>About the book</span>
+        </ion-row >
+        <span>{{book.description}}</span>
+    </ion-content>
+
+</ion-card>
