@@ -1,3 +1,4 @@
+import { WishListService } from './../providers/wishList.service';
 import { UserissuedhistoryPage } from './../pages/userissuedhistory/userissuedhistory';
 import { UserManualPage } from './../pages/user-manual/user-manual';
 import { Myissuedhistory } from './../providers/myissuedhistory';
@@ -9,7 +10,6 @@ import { DetailViewPage } from './../pages/detail-view/detail-view';
 import { CategoriesPage } from './../pages/categories/categories';
 import { LimsAdminComponent } from './lims-admin/lims-admin.component';
 import { LimsUserComponent } from './lims-user/lims-user.component'; 
-
 import { Http } from '@angular/http';
 import { NgModule, ErrorHandler, Component } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -71,6 +71,6 @@ import { APP_BASE_HREF,HashLocationStrategy,LocationStrategy } from '@angular/co
     DetailViewPage,SampleModalPage
 
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},AdminHomeBodyService,HomeBodyService,Authenticate,Search,AdalService,IssueService,GetBook,ProfileService,Myissuedhistory,{provide: APP_BASE_HREF, useValue: '/'}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},WishListService,,AdminHomeBodyService,HomeBodyService,Authenticate,Search,AdalService,IssueService,GetBook,ProfileService,Myissuedhistory,{provide: APP_BASE_HREF, useValue: '/'}]
 })
 export class AppModule {}

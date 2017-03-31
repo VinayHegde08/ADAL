@@ -61,10 +61,11 @@ export class HomeBodyService {
       .map((res: Response) => res);
   }
 cancelRequset(mid:string,isbn:string,token){
-    console.log("Cancelllllllll",mid+isbn);
+    console.log("Cancelllllllll",mid+" "+isbn);
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get("https://webtechsolutionsapi.azurewebsites.net/lims/declineRequest/" + mid + "/" + isbn , options)
+
+    return this.http.get("https://glc-devtest-lims-api.azurewebsites.net/lims/declineRequest/" + mid + "/" + isbn , options)
       .map((res: Response) => res); 
   }
 

@@ -11,83 +11,37 @@
 <ion-nav [root]="rootPage" #content></ion-nav>
 <ion-content padding>
  
+<ion-card class="detailViewPage" *ngFor='let b of book'>
+<ion-list>
+    
+      <ion-item-sliding #item>
 
+        <ion-item>
+          <ion-row class="bookDiv">
+          <ion-col width-33>
+            <img class="img-thumbnail bookImg" src="{{b.image}}" alt="book Image">
+          </ion-col>
+          <ion-col width-67 class="rightAlign">
 
-<ion-card>
-    <ion-row class="bookDiv">
-    <ion-col width-33>
-        <img class="img-thumbnail bookImg" src="./assets/images/9.png" alt="book Image">
-    </ion-col>
-    <ion-col width-67 class="rightAlign">
-        <!--<ion-row>-->
-        <span class="bookTitle">Book title:</span><br>
-        <span class="bookAuthor">Book Author:<br></span>
-       
-        <!--</ion-row>-->
- 
-    </ion-col>
-    </ion-row>
-</ion-card>
-<ion-card>
-    <ion-row class="bookDiv">
-    <ion-col width-33>
-        <img class="img-thumbnail bookImg" src="./assets/images/9.png" alt="book Image">
-    </ion-col>
-    <ion-col width-67 class="rightAlign">
-        <!--<ion-row>-->
-        <span class="bookTitle">Book title:</span><br>
-        <span class="bookAuthor">Book Author:<br></span>
+            <div class="bookTitle">Name: {{b.title}}<br></div><br>
+            <div class="bookAuthor">Author: {{b.authors}}<br></div><br>
+            <div class="bookPublisher">Publisher: {{b.publisher}}<br></div>
+       <!--<span class="heart-button"><button ng-click=""><ion-icon name="heart-outline"></ion-icon></button></span>-->
+        <!--<div class="button-clicked" [style.background-color]="getStyle(b.isbn)">
+      <button class="heart-button" (click)="showStyle = !showStyle;"><ion-icon name="heart-outline"></ion-icon></button>
+       </div>-->
+       <!--<button (click)="putIsbn(b.isbn)">Click here for description. </button>-->
    
-        <!--</ion-row>-->
- 
-    </ion-col>
-    </ion-row>
-</ion-card>
-<ion-card>
-    <ion-row class="bookDiv">
-    <ion-col width-33>
-        <img class="img-thumbnail bookImg" src="./assets/images/9.png" alt="book Image">
-    </ion-col>
-    <ion-col width-67 class="rightAlign">
-        <!--<ion-row>-->
-        <span class="bookTitle">Book title:</span><br>
-        <span class="bookAuthor">Book Author:<br></span>
-        
-        
-        <!--</ion-row>-->
- 
-    </ion-col>
-    </ion-row>
-</ion-card>
-<ion-card>
-    <ion-row class="bookDiv">
-    <ion-col width-33>
-        <img class="img-thumbnail bookImg" src="./assets/images/9.png" alt="book Image">
-    </ion-col>
-    <ion-col width-67 class="rightAlign">
-        <!--<ion-row>-->
-        <span class="bookTitle">Book title:</span><br>
-        <span class="bookAuthor">Book Author:<br></span>
-        
+          </ion-col>
+           </ion-row>
+        </ion-item>
        
- 
-    </ion-col>
-    </ion-row>
-</ion-card>
-<ion-card>
-    <ion-row class="bookDiv">
-    <ion-col width-33>
-        <img class="img-thumbnail bookImg" src="./assets/images/9.png" alt="book Image">
-    </ion-col>
-    <ion-col width-67 class="rightAlign">
-        <!--<ion-row>-->
-        <span class="bookTitle">Book title:</span><br>
-        <span class="bookAuthor">Book Author:<br></span>
-        
-        
-        <!--</ion-row>-->
- 
-    </ion-col>
-    </ion-row>
-</ion-card>
+      </ion-item-sliding>
+   
+</ion-list>
+
+  </ion-card>
+
+
+
 </ion-content>

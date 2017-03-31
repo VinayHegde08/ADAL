@@ -294,8 +294,6 @@ getClassForCircle = function () {
       .subscribe(response => {
         console.log("response of create profile", response);
 
-        // this.showToast('Welcome!', 'success');
-
       }, error => this._logError(error));
     // let flag = this.flagHome;
     this.getMyBooks(this.mid, this.flag1);
@@ -311,7 +309,7 @@ getClassForCircle = function () {
     }
 
     console.log("hhhhhhhhhome", this.flagHome1)
-
+console.log("In home page again... Again..");
 
     // console.log("tokennnnnnnnnnnnn",this.token)
     // console.log("profileeeeee",this.profile)

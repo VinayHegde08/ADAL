@@ -43,7 +43,7 @@ export class SearchPage{
  showSlides:boolean=true;
  selectTitle:boolean=false;
    selectAuthor:boolean=false;
-  constructor(public nav:NavController,private search:Search,public adalService: AdalService,public popoverCtrl: PopoverController,public HomeBodyService: HomeBodyService,private getBook:GetBook) {
+  constructor(public nav:NavController,private search:Search,public adalService: AdalService,public navParams: NavParams,public popoverCtrl: PopoverController,public HomeBodyService: HomeBodyService,private getBook:GetBook) {
 this.token=HomeBodyService.token;
 
   }
@@ -59,11 +59,11 @@ this.token=HomeBodyService.token;
 //       error => console.log(error)
 //     );
 //   }
- ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchPage');
-     this.getAllBooks();
-     this.getCategories();
- }
+//  ionViewDidLoad() {
+//     console.log('ionViewDidLoad SearchPage');
+//      this.getAllBooks();
+//      this.getCategories();
+//  }
  getCategories=function(){
      console.log("in getCategories")
 
@@ -195,9 +195,26 @@ presentPopover(myEvent) {
   }
 
   ngOnInit(){
-    //  this.getAllBooks();
-    //    this.getCategories();
+   this.getCategories();
+  // console.log(this.loaded);
+   this.getAllBooks();
+    this.showSearch=true;
+    console.log("Categoriesed Boooksss"+ this.categorisedBooks);
+   if(this.navParams.get('flag')){
+this.showSearch=this.navParams.get('flag');
+console.log("in navparamssssss",this.showSearch)
+        }
+
+
+
+
+  //  console.log("serach------------");
+   this.searchInput="";
+    setTimeout(() => {
+       this.loaded = true;
+     }, 2500);
 
   }
+  }
 
-}
+

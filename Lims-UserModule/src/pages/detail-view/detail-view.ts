@@ -1,8 +1,9 @@
+import { AdalService } from 'ng2-adal/services/adal.service';
+import { WishListService } from './../../providers/wishList.service';
 import { GetBook } from './../../providers/getBook.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { IssueService, data } from '../../providers/issue-service';
-import { AdalService } from 'ng2-adal/core';
 import { HomeBodyService } from '../../providers/home-body.service';
 
 /*
@@ -21,7 +22,7 @@ export class DetailViewPage {
   date;
   book;
   today;
-  r;
+bookWish=[];
   rate;
   token;
   mid: string;
@@ -30,7 +31,7 @@ export class DetailViewPage {
   errorMessage: string;
 
   // @Input()
-  constructor(public navCtrl: NavController, public navParams: NavParams, private IssueService: IssueService, private toastCtrl: ToastController, private HomeBodyService: HomeBodyService,private getBook:GetBook) {
+  constructor(public navCtrl: NavController,private wishListService: WishListService,public adalService:AdalService, public navParams: NavParams, private IssueService: IssueService, private toastCtrl: ToastController, private HomeBodyService: HomeBodyService,private getBook:GetBook) {
     // this.IssueService=IssueService;
     this.token = HomeBodyService.token;
     this.mid = HomeBodyService.mid;
@@ -98,6 +99,17 @@ export class DetailViewPage {
 
   }
 
+		addWish(){
+		    //  this.isbn=this.getBook();
+		     console.log('in add wish-------1:'+this.book.isbn)
+		     this.wishListService.addtowishlist(this.mid,this.book.isbn,this.adalService.getCachedToken(this.token)).subscribe(
+		        data => {
+		        this.bookWish = data
+		        console.log("hey in add wish"+this.bookWish);
+		      },
+		      error => console.log(error)
+		     )
+		   }
 
   private _logError(data) {
     this.errorMessage = data.message;
