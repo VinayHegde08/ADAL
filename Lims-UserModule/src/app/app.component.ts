@@ -26,6 +26,7 @@ import { AdalService } from "ng2-adal/services/adal.service";
 export class MyApp {
   adminId;
   flag:boolean=true;
+  length;
   public rootPage;
   //  public AuthenticationContext;
   // public authority: string = "https://login.windows.net/common";

@@ -30,7 +30,7 @@ token;
       console.log('in addtowishlist---------->'+isbn+''+mId);
      let headers = new Headers({ 'Authorization': 'Bearer ' + token });
       let options = new RequestOptions({ headers: headers });
-    return this.http.get("http://172.17.120.74:3000/addtowishlist/"+mId+"/"+isbn,options)
+    return this.http.get("http://localhost:3000/addtowishlist/"+mId+"/"+isbn,options)
      .map((res:Response)  => res.json());
   }
   getBookDetails(mId:string,token):Observable<Data[]>{
@@ -38,7 +38,7 @@ token;
       console.log('in addtowishlist'+mId);
      let headers = new Headers({ 'Authorization': 'Bearer ' + token });
       let options = new RequestOptions({ headers: headers });
-    return this.http.get("http://172.17.120.74:3000/getisbndetails/"+ mId,options)
+    return this.http.get("http://localhost:3000/getisbndetails/"+ mId,options)
      .map((res:Response)  => res.json());
   }
   getWishBookDetails(mId: string,token)
@@ -46,7 +46,7 @@ token;
     console.log('in getwishbookdetail'+mId);
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
-     return this.http.get("http://172.17.120.74:3000/getwishlist/"+ mId,options)
+     return this.http.get("http://localhost:3000/getwishlist/"+ mId,options)
      .map((res:Response)  => res.json());
   }
 

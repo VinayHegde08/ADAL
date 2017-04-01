@@ -14,6 +14,7 @@ import { HomeBodyService } from '../../providers/home-body.service';
 })
 export class UserissuedhistoryPage {
 mid:string;
+length;
 myDate:string;
 showBooks:boolean=false;
 Nobooks:boolean=false;

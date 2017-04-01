@@ -30,9 +30,8 @@
 			<button ion-button round ion-button color="danger" (click)="requestBook()" [disabled]=isDisabled>Request</button>
 		</ion-col>
 <ion-col>
-			<button ion-button round ion-button color="danger" (click)="addWish()" [disabled]=isDisabled>Add to wish list</button>
+			<button ion-button round ion-button color="danger" (click)="addWish()" >Add to wish list</button>
 		</ion-col>
-
     </ion-row>
 
   <ion-content class="bookViewDetails detailViewshadowDiv">
@@ -40,6 +39,7 @@
             <span>About the book</span>
         </ion-row >
         <span>{{book.description}}</span>
+				<button ion-button round ion-button color="danger" (click)="yam()">Yammer</button>
     </ion-content>
 
 </ion-card>

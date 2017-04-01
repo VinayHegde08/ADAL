@@ -12,6 +12,7 @@ avgRating:number=0;
 callback;
 book:any;
 token;
+length;
 errorMessage: string;
 mid:string;
   constructor(private params:NavParams,public nav:NavController,private viewCtrl: ViewController,private toastCtrl: ToastController,private HomeBodyService:HomeBodyService) {

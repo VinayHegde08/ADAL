@@ -20,7 +20,6 @@ export class DetailViewPage {
   isDisabled: boolean = false;
   isRenewDisabled: boolean = true;
   date;
-  book;
   today;
 bookWish=[];
   rate;
@@ -30,7 +29,8 @@ bookWish=[];
   dueDate: string;
   errorMessage: string;
 
-  // @Input()
+  @Input()
+  book:any
   constructor(public navCtrl: NavController,private wishListService: WishListService,public adalService:AdalService, public navParams: NavParams, private IssueService: IssueService, private toastCtrl: ToastController, private HomeBodyService: HomeBodyService,private getBook:GetBook) {
     // this.IssueService=IssueService;
     this.token = HomeBodyService.token;
@@ -119,7 +119,11 @@ bookWish=[];
     
     console.log('ionViewDidLoad DetailViewPage');
   }
-
+ yam()
+  {
+   window.location.href = 'https://www.yammer.com/mindtree.com/#/threads/inGroup?type=in_group&feedId=11182246';
+   
+  }
   ngOnInit() {
     this.book=this.getBook.getBook();
  console.log(this.book.title);

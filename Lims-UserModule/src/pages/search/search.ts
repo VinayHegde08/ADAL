@@ -17,19 +17,19 @@ import {AdalService} from 'ng2-adal/core';
 export class SearchPage{
  homeBook;
  
-  //  @Output()
-  // bookChange=new EventEmitter();
-//   @Input()
-//   get book(){
-//   return this.homeBook
-// }
-// set book(val){
-// this.homeBook=val;
-// this.bookChange.emit(this.homeBook)
-// }
-//   slideOptions={
-//     pager: true
-//   }
+   @Output()
+  bookChange=new EventEmitter();
+  @Input()
+  get book(){
+  return this.homeBook
+}
+set book(val){
+this.homeBook=val;
+this.bookChange.emit(this.homeBook)
+}
+  slideOptions={
+    pager: true
+  }
  Books:any[];
  showStyle:false;
  token;
@@ -112,7 +112,7 @@ getItems=function(ev) {
       return(item.authors.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
       }
-      else  if (this.selectTitle==true)
+      else   (this.selectTitle==true)
       {
            this.categorisedBooks = this.categorisedBooks.filter((item) => {
         return (item.title.toLowerCase().indexOf(val.toLowerCase()) > -1);

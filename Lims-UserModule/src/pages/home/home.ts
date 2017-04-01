@@ -11,6 +11,7 @@ import { ModalController, AlertController, PopoverController, App, ViewControlle
   templateUrl: 'home.html'
 })
 export class HomePage {
+  
   flagHome1: boolean;
   @Input()
   flagHome: boolean;
