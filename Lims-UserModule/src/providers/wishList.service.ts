@@ -30,7 +30,11 @@ token;
       console.log('in addtowishlist---------->'+isbn+''+mId);
      let headers = new Headers({ 'Authorization': 'Bearer ' + token });
       let options = new RequestOptions({ headers: headers });
+<<<<<<< HEAD
+    return this.http.get("http://172.17.124.55:3000/addtowishlist/"+mId+"/"+isbn,options)
+=======
     return this.http.get("http://localhost:3000/addtowishlist/"+mId+"/"+isbn,options)
+>>>>>>> 12a43f002a03ad3fe70690bbe66c3ae760887ab0
      .map((res:Response)  => res.json());
   }
   getBookDetails(mId:string,token):Observable<Data[]>{
@@ -38,7 +42,11 @@ token;
       console.log('in addtowishlist'+mId);
      let headers = new Headers({ 'Authorization': 'Bearer ' + token });
       let options = new RequestOptions({ headers: headers });
+<<<<<<< HEAD
+    return this.http.get("http://172.17.124.55:3000/getisbndetails/"+ mId,options)
+=======
     return this.http.get("http://localhost:3000/getisbndetails/"+ mId,options)
+>>>>>>> 12a43f002a03ad3fe70690bbe66c3ae760887ab0
      .map((res:Response)  => res.json());
   }
   getWishBookDetails(mId: string,token)
@@ -46,7 +54,11 @@ token;
     console.log('in getwishbookdetail'+mId);
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
+<<<<<<< HEAD
+     return this.http.get("http://172.17.124.55:3000/getwishlist/"+ mId,options)
+=======
      return this.http.get("http://localhost:3000/getwishlist/"+ mId,options)
+>>>>>>> 12a43f002a03ad3fe70690bbe66c3ae760887ab0
      .map((res:Response)  => res.json());
   }
 
